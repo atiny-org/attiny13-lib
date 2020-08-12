@@ -37,5 +37,5 @@
 #define pwm_fast_max_mode_invert_A() timer_pwm_set_downcount_OC0A()
 #define pwm_fast_max_mode_invert_B() timer_pwm_set_downcount_OC0B()
 
-#define pwm_use_fast_max_mode() set_waveform_generation_FAST_PWM_MAX_mode(); pwm_fast_max_mode_dont_invert_A(); pwm_fast_max_mode_dont_invert_B()
+#define pwm_use_fast_max_mode() set_waveform_generation_FAST_PWM_MAX_mode();
 

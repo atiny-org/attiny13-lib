@@ -68,8 +68,8 @@ WG_PHASE_CORRECT_PWM_MODE_OCR0A 5 = 1 01
 #define timer_non_pwm_clear_OC0B() gpio_set_as_output_multiple(GPIO_PB1_MASK); assign_bit_range_5_4(TCCR0A, 0x20)
 
 // The OC0x pin is set at each compare match
-#define timer_non_pwm_set_OC0A() gpio_set_as_output_multiple(GPIO_PB0_MASK); set_bit_multiple(TCCR0A, 0x80)
-#define timer_non_pwm_set_OC0B() gpio_set_as_output_multiple(GPIO_PB1_MASK); set_bit_multiple(TCCR0A, 0x20)
+#define timer_non_pwm_set_OC0A() gpio_set_as_output_multiple(GPIO_PB0_MASK); set_bit_multiple(TCCR0A, 0xC0)
+#define timer_non_pwm_set_OC0B() gpio_set_as_output_multiple(GPIO_PB1_MASK); set_bit_multiple(TCCR0A, 0x30)
 
 
 // PWM Mode Compare Output Mode Adjustments
@@ -88,8 +88,8 @@ WG_PHASE_CORRECT_PWM_MODE_OCR0A 5 = 1 01
 // The OC0x pin is cleared until set at compare match when counting up.
 // Then the 0C0x pin is cleared again when the counter reaches MAX for fast PWM.
 // Otherwise the 0C0x pin is cleared again during a match at countdown for phase correct PWM.
-#define timer_pwm_set_downcount_OC0A() gpio_set_as_output_multiple(GPIO_PB0_MASK); set_bit_multiple(TCCR0A, 0x80)
-#define timer_pwm_set_downcount_OC0B() gpio_set_as_output_multiple(GPIO_PB1_MASK); set_bit_multiple(TCCR0A, 0x20)
+#define timer_pwm_set_downcount_OC0A() gpio_set_as_output_multiple(GPIO_PB0_MASK); set_bit_multiple(TCCR0A, 0xC0)
+#define timer_pwm_set_downcount_OC0B() gpio_set_as_output_multiple(GPIO_PB1_MASK); set_bit_multiple(TCCR0A, 0x30)
 
 
 
